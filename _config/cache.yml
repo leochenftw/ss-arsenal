@@ -1,0 +1,8 @@
+---
+Name: leochenftw-ss-arsenal-cachehandler
+---
+SilverStripe\Core\Injector\Injector:
+  Psr\SimpleCache\CacheInterface.CacheHandler:
+    factory: SilverStripe\Core\Cache\CacheFactory
+    constructor:
+      namespace: "CacheHandler"

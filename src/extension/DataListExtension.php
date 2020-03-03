@@ -10,7 +10,15 @@ class DataListExtension extends DataExtension
     {
         $result         =   [];
         foreach ($this->owner as $item) {
-            $result[]   =   !is_null($param) ? $item->getTileData($param) : $item->getTileData();
+            if (!is_null($param)) {
+                if (!is_array($param)) {
+                    $result[]   =   $item->getTileData($param);
+                } else {
+                    $result[]   =   call_user_func_array([$item, 'getTileData'], $param);
+                }
+            } else {
+                $result[]   =   $item->getTileData();
+            }
         }
 
         return $result;
@@ -20,7 +28,15 @@ class DataListExtension extends DataExtension
     {
         $result         =   [];
         foreach ($this->owner as $item) {
-            $result[]   =   !is_null($param) ? $item->getMiniData($param) : $item->getMiniData();
+            if (!is_null($param)) {
+                if (!is_array($param)) {
+                    $result[]   =   $item->getMiniData($param);
+                } else {
+                    $result[]   =   call_user_func_array([$item, 'getMiniData'], $param);
+                }
+            } else {
+                $result[]   =   $item->getMiniData();
+            }
         }
 
         return $result;

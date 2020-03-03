@@ -13,6 +13,11 @@
     ],
     "require": {
         "silverstripe/framework": "^4.4",
+        "littlegiant/silverstripe-seo-editor": "^2.1",
+        "silverstripe/lumberjack": "^2.0.1",
+        "salted-herring/salted-cropper": "dev-feature/ss4-upgrade",
+        "gorriecoe/silverstripe-linkfield": "dev-master",
+        "cocur/slugify": "^3.2",
         "undefinedoffset/sortablegridfield": "^2"
     }
 }

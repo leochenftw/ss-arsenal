@@ -14,8 +14,8 @@ use SilverStripe\Forms\ToggleCompositeField;
 use SilverStripe\ORM\DataExtension;
 use SilverStripe\Control\Director;
 use Leochenftw\Debugger;
-use SaltedHerring\Salted\Cropper\SaltedCroppableImage;
-use SaltedHerring\Salted\Cropper\Fields\CroppableImageField;
+use Cita\ImageCropper\Model\CitaCroppableImage;
+use Cita\ImageCropper\Fields\CroppableImageField;
 
 /**
  * @file SocialTagExtension
@@ -40,10 +40,10 @@ class SocialTagExtension extends DataExtension
     ];
 
     private static $has_one =  [
-        'OGImage'               =>  SaltedCroppableImage::class,
-        'OGImageLarge'          =>  SaltedCroppableImage::class,
-        'TwitterImage'          =>  SaltedCroppableImage::class,
-        'TwitterImageLarge'     =>  SaltedCroppableImage::class
+        'OGImage'               =>  CitaCroppableImage::class,
+        'OGImageLarge'          =>  CitaCroppableImage::class,
+        'TwitterImage'          =>  CitaCroppableImage::class,
+        'TwitterImageLarge'     =>  CitaCroppableImage::class
     ];
 
     /**

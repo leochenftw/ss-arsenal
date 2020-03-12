@@ -24,9 +24,6 @@ SilverStripe\ORM\DataList:
 SilverStripe\ORM\ArrayList:
   extensions:
     - Leochenftw\Extension\DataListExtension
-SaltedHerring\Salted\Cropper\SaltedCroppableImage:
-  extensions:
-    - Leochenftw\Extension\SaltyImageExtension
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Leochenftw\Extension\SiteConfigExtension

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Web\Extension;
+namespace Leochenftw\Extension;
 use Cocur\Slugify\Slugify;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\DataExtension;

@@ -141,6 +141,10 @@ class SiteConfigExtension extends DataExtension
 
     public function getVueJS()
     {
+        if ($this->owner->UnderMaintenance) {
+            return null;
+        }
+
         if ($file = $this->read_vue_entry_file()) {
             $script_pattern =   "/\<script type=\"text\/javascript\" src=\"(.*?)\"\>\<\/script\>/i";
             preg_match_all($script_pattern, $file, $matches);

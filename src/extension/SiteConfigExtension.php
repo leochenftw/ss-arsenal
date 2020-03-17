@@ -109,15 +109,6 @@ class SiteConfigExtension extends DataExtension
         return $fields;
     }
 
-    public function getData()
-    {
-        return [
-            'title'     =>  $this->owner->Title,
-            'tagline'   =>  $this->owner->Tagline,
-            'logo'      =>  $this->owner->Logo()->getData('ScaleWidth', 128)
-        ];
-    }
-
     private function read_vue_entry_file()
     {
         $file   =   Environment::getEnv('FRONTEND_PATH');

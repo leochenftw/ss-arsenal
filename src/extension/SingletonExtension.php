@@ -17,12 +17,10 @@ class SingletonExtension extends DataExtension
      */
     public function canCreate($member = null, $context = [])
     {
-        if (empty($member)) return false;
-
         if (Versioned::get_by_stage($this->owner->ClassName, 'Stage')->count() > 0) {
             return false;
         }
 
-        return $member->inGroup('administrators') || $member->inGroup('content-authors');
+        return parent::canCreate($member, $context);
     }
 }

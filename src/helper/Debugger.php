@@ -12,7 +12,10 @@ class Debugger
 {
     public static function inspect($obj, $die = true)
     {
-        Debug::dump($obj);
+        print '<pre>';
+        print_r($obj);
+        print '</pre>';
+        
         if ($die) {
             die;
         }
@@ -26,6 +29,15 @@ class Debugger
             echo 'object is empty';
         }
         die;
+    }
+
+    public static function isRecursive($array) {
+        foreach($array as $v) {
+            if($v === $array) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static function props(&$obj)

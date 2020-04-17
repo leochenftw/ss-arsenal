@@ -12,10 +12,14 @@ class Debugger
 {
     public static function inspect($obj, $die = true)
     {
-        print '<pre>';
-        print_r($obj);
-        print '</pre>';
-        
+        if (is_array($obj) || is_object($obj)) {
+            print '<pre>';
+            print_r($obj);
+            print '</pre>';
+        } else {
+            Debug::show($obj);
+        }
+
         if ($die) {
             die;
         }

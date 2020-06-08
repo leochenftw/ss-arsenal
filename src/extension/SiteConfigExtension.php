@@ -49,7 +49,8 @@ class SiteConfigExtension extends DataExtension
      * @var array
      */
     private static $owns = [
-        'Logo'
+        'Logo',
+        'LogoSVG'
     ];
 
     /**

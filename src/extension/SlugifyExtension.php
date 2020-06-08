@@ -25,7 +25,7 @@ class SlugifyExtension extends DataExtension
     public function onBeforeWrite()
     {
         parent::onBeforeWrite();
-        if ($this->owner->hasField('Title')) {
+        if ($this->owner->hasField('Title') && preg_match('/^[a-z0-9 .\-]+$/i', $this->owner->Title)) {
             $slugify            =   new Slugify();
             $this->owner->Slug  =   $slugify->slugify($this->owner->Title);
         }

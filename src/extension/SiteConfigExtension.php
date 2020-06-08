@@ -10,6 +10,7 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Assets\Image;
+use SilverStripe\Assets\File;
 use SilverStripe\Forms\LiteralField;
 use SilverStripe\ORM\DataExtension;
 use Page;
@@ -37,9 +38,10 @@ class SiteConfigExtension extends DataExtension
      * @var array
      */
     private static $has_one = [
-        'Logo'              =>  Image::class,
-        'TermsConditions'   =>  Page::class,
-        'PrivacyPolicy'     =>  Page::class
+        'Logo' =>  Image::class,
+        'LogoSVG' => File::class,
+        'TermsConditions' => Page::class,
+        'PrivacyPolicy' => Page::class
     ];
 
     /**
@@ -64,7 +66,7 @@ class SiteConfigExtension extends DataExtension
                 UploadField::create(
                     'Logo',
                     'Logo'
-                )
+                )->setAllowedExtensions(['jpg', 'jpeg', 'png', 'svg'])
             ],
             'Title'
         );

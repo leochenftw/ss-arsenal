@@ -25,7 +25,7 @@ use SilverStripe\Forms\GridField\GridFieldPaginator;
 
 class Grid
 {
-    public static function make($name, $label, $source, $sortable = true, $gridHeaderType = 'GridFieldConfig_RecordEditor', $no_add = false)
+    public static function make($name, $label, $source, $sortable = true, $gridHeaderType = 'GridFieldConfig_RecordEditor', $no_add = false, $sort_field = 'Sort')
     {
         /*
         GridFieldConfig_Base
@@ -64,7 +64,7 @@ class Grid
         }
 
         if ($sortable) {
-            $config->addComponent($sortable = new GridFieldSortableRows('Sort'));
+            $config->addComponent($sortable = new GridFieldSortableRows($sort_field));
             $sortable->setUpdateVersionedStage('Live');
         }
 

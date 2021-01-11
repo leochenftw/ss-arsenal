@@ -6,6 +6,10 @@ use SilverStripe\ORM\DataExtension;
 
 class ImageExtension extends DataExtension
 {
+    private static $db = [
+      'Copyright' => 'Varchar(256)',
+    ];
+
     public function getData($resample = 'ScaleWidth', $width = 600, $height = null)
     {
         if (!$this->owner->exists()) return null;
@@ -75,7 +79,8 @@ class ImageExtension extends DataExtension
                             (empty($width) ? $this->owner->$resample($height * 2)->getAbsoluteURL() :
                             $this->owner->$resample($width * 2, $height * 2)->getAbsoluteURL()),
             'width'     =>  $width,
-            'height'    =>  $re_height
+            'height'    =>  $re_height,
+            'copyright' =>  $this->owner->Copyright,
         ];
     }
 

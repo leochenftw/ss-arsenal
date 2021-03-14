@@ -14,8 +14,8 @@
     "require": {
         "wilr/silverstripe-googlesitemaps": "^2.1",
         "silverstripe/recipe-plugin": "^1.2",
-        "silverstripe/recipe-cms": "4.6.1@stable",
-        "silverstripe/login-forms": "4.1.2@stable",
+        "silverstripe/recipe-cms": "^4.7",
+        "silverstripe/login-forms": "^4.1",
         "gorriecoe/silverstripe-link": "^1.2",
         "gorriecoe/silverstripe-linkfield": "^1.0",
         "silvershop/silverstripe-hasonefield": "^3.0",

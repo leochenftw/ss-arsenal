@@ -27,7 +27,7 @@
         "dhensby/silverstripe-masquerade": "^0.2.1",
         "symbiote/silverstripe-gridfieldextensions": "^3",
         "gdmedia/ss-auto-git-ignore": "^1.0",
-        "silverstripe/framework": "^4.4",
+        "silverstripe/framework": "^4.7",
         "littlegiant/silverstripe-seo-editor": "^2.1",
         "silverstripe/lumberjack": "^2.0.1",
         "cita/image-cropper": "dev-master",

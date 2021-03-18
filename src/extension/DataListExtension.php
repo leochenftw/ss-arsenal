@@ -8,55 +8,49 @@ class DataListExtension extends DataExtension
 {
     public function getTileData($param = null)
     {
-        $result         =   [];
-        foreach ($this->owner as $item) {
+        return array_map(function($item) use ($param) {
             if (!is_null($param)) {
                 if (!is_array($param)) {
-                    $result[]   =   $item->getTileData($param);
-                } else {
-                    $result[]   =   call_user_func_array([$item, 'getTileData'], $param);
+                    return $item->getTileData($param);
                 }
-            } else {
-                $result[]   =   $item->getTileData();
-            }
-        }
 
-        return $result;
+                return call_user_func_array([$item, 'getTileData'], $param);
+            }
+
+            return $item->TileData;
+
+        }, $this->owner->toArray());
     }
 
     public function getMiniData($param = null)
     {
-        $result         =   [];
-        foreach ($this->owner as $item) {
-            if (!is_null($param)) {
-                if (!is_array($param)) {
-                    $result[]   =   $item->getMiniData($param);
-                } else {
-                    $result[]   =   call_user_func_array([$item, 'getMiniData'], $param);
-                }
-            } else {
-                $result[]   =   $item->getMiniData();
-            }
-        }
+      return array_map(function($item) use ($param) {
+          if (!is_null($param)) {
+              if (!is_array($param)) {
+                  return $item->getMiniData($param);
+              }
 
-        return $result;
+              return call_user_func_array([$item, 'getMiniData'], $param);
+          }
+
+          return $item->MiniData;
+
+      }, $this->owner->toArray());
     }
 
     public function getData($param = null)
     {
-        $result         =   [];
-        foreach ($this->owner as $item) {
-            if (!is_null($param)) {
-                if (!is_array($param)) {
-                    $result[]   =   $item->getData($param);
-                } else {
-                    $result[]   =   call_user_func_array([$item, 'getData'], $param);
-                }
-            } else {
-                $result[]   =   $item->getData();
-            }
-        }
+      return array_map(function($item) use ($param) {
+          if (!is_null($param)) {
+              if (!is_array($param)) {
+                  return $item->getData($param);
+              }
 
-        return $result;
+              return call_user_func_array([$item, 'getData'], $param);
+          }
+
+          return $item->Data;
+
+      }, $this->owner->toArray());
     }
 }

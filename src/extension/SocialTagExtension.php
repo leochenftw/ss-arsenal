@@ -153,10 +153,10 @@ class SocialTagExtension extends DataExtension
                                         'OGDescription',
                                         'Description'
                                     );
-            $og_image           =   CroppableImageField::create('OGImageID', 'Square Image')
+            $og_image           =   CroppableImageField::create('OGImage', 'Square Image', $this->owner)
                                         ->setCropperRatio(1)
                                         ->setDescription('Image must be uploaded at a ratio of 1:1 (square)');
-            $og_large_image     =   CroppableImageField::create('OGImageLargeID', 'Landscape Image')
+            $og_large_image     =   CroppableImageField::create('OGImageLarge', 'Landscape Image', $this->owner)
                                         ->setCropperRatio(1.91)
                                         ->setDescription('Image must be uploaded at a ratio of 1200/630 (landscape)');
 
@@ -203,10 +203,10 @@ class SocialTagExtension extends DataExtension
                                         'Use Meta Description as Twitter Description'
                                     );
             $tw_desc            =   TextareaField::create('TwitterDescription', 'Description');
-            $tw_image           =   CroppableImageField::create('TwitterImageID', 'Square Image')
+            $tw_image           =   CroppableImageField::create('TwitterImage', 'Square Image', $this->owner)
                                         ->setCropperRatio(1)
                                         ->setDescription('Image must be uploaded at a ratio of 1:1 (square)');
-            $tw_large_image     =   CroppableImageField::create('TwitterImageLargeID', 'Landscape Image')
+            $tw_large_image     =   CroppableImageField::create('TwitterImageLarge', 'Landscape Image', $this->owner)
                                         ->setFolderName('SEO')
                                         ->setCropperRatio(2)
                                         ->setDescription('Image must be uploaded at a ratio of 2:1 (landscape)');

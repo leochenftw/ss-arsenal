@@ -38,8 +38,7 @@ class SiteConfigExtension extends DataExtension
      * @var array
      */
     private static $has_one = [
-        'Logo' =>  Image::class,
-        'LogoSVG' => File::class,
+        'Logo' => File::class,
         'TermsConditions' => Page::class,
         'PrivacyPolicy' => Page::class
     ];
@@ -50,7 +49,6 @@ class SiteConfigExtension extends DataExtension
      */
     private static $owns = [
         'Logo',
-        'LogoSVG'
     ];
 
     /**

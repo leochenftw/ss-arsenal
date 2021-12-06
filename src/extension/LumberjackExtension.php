@@ -18,22 +18,11 @@ class LumberjackExtension extends DataExtension
         if ($owner->hasExtension(Lumberjack::class)) {
             $children   =   $fields->fieldByName('Root.ChildPages.ChildPages');
 
-            $fields->removeByName([
-                'ChildPages'
-            ]);
-            $fields->removeByName([
-                'ChildPages'
-            ]);
-
             $config     =   $children->getConfig();
             $config->addComponent($sortable = new GridFieldSortableRows('Sort'));
             $sortable->setUpdateVersionedStage('Live');
-
-            $fields->addFieldToTab(
-                'Root.ChildPages',
-                $children
-            );
         }
+        
         return $fields;
     }
 }

@@ -32,7 +32,7 @@
         "silverstripe/lumberjack": "^2.0.1",
         "cita/image-cropper": "dev-master",
         "cocur/slugify": "^3.2",
-        "guzzlehttp/guzzle": "^6",
+        "guzzlehttp/guzzle": "^7",
         "undefinedoffset/sortablegridfield": "^2",
         "dynamic/silverstripe-country-dropdown-field": "^1.2",
         "colymba/gridfield-bulk-editing-tools": "^3.0"

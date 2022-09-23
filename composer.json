@@ -30,7 +30,7 @@
         "silverstripe/framework": "^4.7",
         "littlegiant/silverstripe-seo-editor": "^2.1",
         "silverstripe/lumberjack": "^2.0.1",
-        "cita/image-cropper": "dev-master",
+        "cita/image-cropper": "^2.0.3",
         "cocur/slugify": "^3.2",
         "guzzlehttp/guzzle": "^7",
         "undefinedoffset/sortablegridfield": "^2",

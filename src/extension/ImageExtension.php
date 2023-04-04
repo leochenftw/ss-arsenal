@@ -73,7 +73,13 @@ class ImageExtension extends DataExtension
         return [
             'id'        =>  $this->owner->ID,
             'title'     =>  $this->owner->Title,
-            'ratio'     =>  round((empty($height) ? ($this->owner->Height / $this->owner->Width) : ($height / $width)) * 10000) / 100,
+            'ratio'     =>  round((empty($height)
+                                ? (!empty($this->owner->Width) 
+                                   ? ($this->owner->Height / $this->owner->Width)
+                                   : 1
+                                  )
+                                : ($height / $width)) * 10000) / 100
+                            ,
             'url'       =>  empty($height) ?
                             $this->owner->$resample($width * 2)->getAbsoluteURL() :
                             (empty($width) ? $this->owner->$resample($height * 2)->getAbsoluteURL() :

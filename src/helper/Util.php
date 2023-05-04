@@ -275,7 +275,7 @@ class Util
     {
         $content    =   ShortcodeParser::get_active()->parse($content);
 
-        if (!Director::isLive()) {
+        if (!Director::isLive() && $content) {
             $content   =   str_replace('<img src="', '<img src="' . rtrim(Director::absoluteBaseURL(), '/'), $content);
         }
 
